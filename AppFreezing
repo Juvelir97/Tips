@@ -1,0 +1,3 @@
+# Press Win key and start type
+
+taskkill /f /im <process or app name> /t
