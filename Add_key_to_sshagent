@@ -1,0 +1,4 @@
+$ eval $(ssh-agent) 
+Enter ssh-add followed by the path to the private key file:
+
+$ ssh-add ~/.ssh/<private_key_file>      
