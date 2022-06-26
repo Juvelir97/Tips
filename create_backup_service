@@ -1,0 +1,35 @@
+####### web-backup.service
+
+[Unit]
+Description=Backup the web site, every day, or the boss will be mad
+
+[Service]
+Type=simple
+ExecStart=/usr/local/sbin/web-backup.sh
+
+[Install]
+WantedBy=multi-user.target
+
+###### web-backup.sh
+
+#!/bin/bash
+
+DATE=$(date "+%d")
+
+/bin/tar -czf /root/site-backup-$DATE.tar.gz /var/www/html
+
+##### web-backup.timer
+
+[Unit]
+Description=Fire off the backup
+
+[Timer]
+OnCalendar=*-*-* 23:00:00
+Persistent=true
+Unit=web-backup.service
+
+[Install]
+WantedBy=multi-user.target
+
+cp web-backup.{service,timer} /etc/systemd/system/
+systemctl daemon-reload
