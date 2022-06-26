@@ -1,7 +1,7 @@
 ####### web-backup.service
 
 [Unit]
-Description=Backup the web site, every day, or the boss will be mad
+Description=Backup the web site, every day
 
 [Service]
 Type=simple
