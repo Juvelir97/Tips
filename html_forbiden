@@ -1,0 +1,2 @@
+1)ls -lZ /var/www/html #show se context
+2)restorecon /var/www/html -R
