@@ -1,0 +1,4 @@
+You can View the web content from a web server without exposing port 80 fo outside network
+1) set SSH tunnel from your laptop to the server: ssh -D 8080 ubuntu@x.x.x.x
+2) go to Firefox settings and set proxy SOCShost:"localhost" port: 8080
+3) you can access the host via Firefox
