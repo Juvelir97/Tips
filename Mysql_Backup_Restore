@@ -1,0 +1,8 @@
+Backup
+mysqldump -u root -p prod products > prod_products.sql # Backup table Products from db prod
+mysqldump -u root -p --databases dev test > dev_test.sql # Backup specific dbs
+mysqldump -u root -p --all-databases > full_backup.sql
+
+Restore
+mysql -u root -p < mysql_dump.sql # outside mysql
+source backupfilename # inside mysql
